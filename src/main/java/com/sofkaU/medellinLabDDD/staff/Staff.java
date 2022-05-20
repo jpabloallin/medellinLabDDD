@@ -1,15 +1,12 @@
 package com.sofkaU.medellinLabDDD.staff;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-import com.sofkaU.medellinLabDDD.lab.events.DeviceModelUpdated;
-import com.sofkaU.medellinLabDDD.lab.events.DeviceNameUpdated;
-import com.sofkaU.medellinLabDDD.lab.events.LabTypeUpdated;
-import com.sofkaU.medellinLabDDD.lab.values.*;
 import com.sofkaU.medellinLabDDD.lab.values.Name;
 import com.sofkaU.medellinLabDDD.staff.events.*;
 import com.sofkaU.medellinLabDDD.staff.values.*;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Staff  extends AggregateEvent<StaffId> {
@@ -36,7 +33,6 @@ public class Staff  extends AggregateEvent<StaffId> {
     public void updateLabCourierYearsOfExperience(LabCourierId entityId, YearsOfExperience yearsOfExperience) {
         appendChange(new LabCourierYearsOfExperienceUpdated(entityId, yearsOfExperience)).apply();
     }
-
     public void addCleaner(CleanerId entityId, Name name, YearsOfExperience yearsOfExperience) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(name);
@@ -60,5 +56,40 @@ public class Staff  extends AggregateEvent<StaffId> {
     }
     public void updateRecepcionistYearsOfExperience(RecepcionistId entityId, YearsOfExperience yearsOfExperience) {
         appendChange(new RecepcionistYearsOfExperienceUpdated(entityId, yearsOfExperience)).apply();
+    }
+
+    public Optional<LabCourier> getLabCourierById(LabCourierId entityId) {
+        return labCouriers()
+                .stream()
+                .filter(labCourier -> labCourier.identity().equals(entityId))
+                .findFirst();
+    }
+
+    public Optional<Cleaner> getCleanerById(CleanerId entityId) {
+        return cleaners()
+                .stream()
+                .filter(cleaner -> cleaner.identity().equals(entityId))
+                .findFirst();
+    }
+    public Optional<Recepcionist> getRecepcionistById(RecepcionistId entityId) {
+        return recepcionists()
+                .stream()
+                .filter(receptionist -> receptionist.identity().equals(entityId))
+                .findFirst();
+    }
+    public WorkArea workArea() {
+        return workArea;
+    }
+
+    public Set<LabCourier> labCouriers() {
+        return labCouriers;
+    }
+
+    public Set<Cleaner> cleaners() {
+        return cleaners;
+    }
+
+    public Set<Recepcionist> recepcionists() {
+        return recepcionists;
     }
 }
