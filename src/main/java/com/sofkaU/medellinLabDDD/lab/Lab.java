@@ -3,13 +3,6 @@ package com.sofkaU.medellinLabDDD.lab;
 import co.com.sofka.domain.generic.AggregateEvent;
 import com.sofkaU.medellinLabDDD.lab.events.*;
 import com.sofkaU.medellinLabDDD.lab.values.*;
-import com.sofkaU.medellinLabDDD.staff.Cleaner;
-import com.sofkaU.medellinLabDDD.staff.LabCourier;
-import com.sofkaU.medellinLabDDD.staff.Recepcionist;
-import com.sofkaU.medellinLabDDD.staff.values.CleanerId;
-import com.sofkaU.medellinLabDDD.staff.values.LabCourierId;
-import com.sofkaU.medellinLabDDD.staff.values.RecepcionistId;
-
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -46,7 +39,7 @@ public class Lab extends AggregateEvent<LabId> {
     public void addBacteriologist(BacteriologistId entityId, Name name) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(name);
-        appendChange(new DeviceAdded(entityId, name)).apply();
+        appendChange(new BacteriologistAdded(entityId, name)).apply();
     }
     public void updateBacteriologistName(BacteriologistId entityId, Name name) {
         appendChange(new BacteriologistNameUpdated(entityId, name)).apply();
@@ -54,7 +47,7 @@ public class Lab extends AggregateEvent<LabId> {
     public void addBioengineer(BioengineerId entityId, Name name) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(name);
-        appendChange(new DeviceAdded(entityId, name)).apply();
+        appendChange(new BioengineerAdded(entityId, name)).apply();
     }
     public void updateBioengineerName(BioengineerId entityId, Name name) {
         appendChange(new BioengineerNameUpdated(entityId, name)).apply();
