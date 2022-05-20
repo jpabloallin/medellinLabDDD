@@ -6,10 +6,12 @@ import com.sofkaU.medellinLabDDD.lab.values.DeviceName;
 import com.sofkaU.medellinLabDDD.lab.values.LifeSpan;
 import com.sofkaU.medellinLabDDD.lab.values.Model;
 
+import java.util.Objects;
+
 public class Device extends Entity<DeviceId> {
-    private final DeviceName deviceName;
-    private final Model model;
-    private final LifeSpan lifeSpan;
+    private DeviceName deviceName;
+    private Model model;
+    private LifeSpan lifeSpan;
 
     public Device(DeviceId entityId, DeviceName deviceName, Model model, LifeSpan lifeSpan) {
         super(entityId);
@@ -17,15 +19,21 @@ public class Device extends Entity<DeviceId> {
         this.model = model;
         this.lifeSpan = lifeSpan;
     }
-
+    public void updateDeviceName(DeviceName deviceName) {
+        this.deviceName = Objects.requireNonNull(deviceName);
+    }
+    public void updateModel(Model model) {
+        this.model = Objects.requireNonNull(model);
+    }
+    public void UpdateLifeSpan(LifeSpan lifeSpan) {
+        this.lifeSpan =Objects.requireNonNull(lifeSpan);
+    }
     public DeviceName deviceName() {
         return deviceName;
     }
-
     public Model model() {
         return model;
     }
-
     public LifeSpan lifeSpan() {
         return lifeSpan;
     }
