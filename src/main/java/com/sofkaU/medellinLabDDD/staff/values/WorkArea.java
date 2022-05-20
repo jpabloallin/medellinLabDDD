@@ -1,4 +1,10 @@
 package com.sofkaU.medellinLabDDD.staff.values;
 
-public class WorkArea {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class WorkArea implements ValueObject<String> {
+    @Override
+    public String value() {
+        return null;
+    }
 }

@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.staff.values;
 
-public class RecepcionistId {
+import co.com.sofka.domain.generic.Identity;
+
+public class RecepcionistId extends Identity {
 }

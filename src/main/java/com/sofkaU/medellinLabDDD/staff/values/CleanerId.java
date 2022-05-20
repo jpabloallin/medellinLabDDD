@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.staff.values;
 
-public class CleanerId {
+import co.com.sofka.domain.generic.Identity;
+
+public class CleanerId extends Identity {
 }

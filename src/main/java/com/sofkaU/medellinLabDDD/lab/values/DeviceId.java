@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.lab.values;
 
-public class DeviceId {
+import co.com.sofka.domain.generic.Identity;
+
+public class DeviceId extends Identity {
 }

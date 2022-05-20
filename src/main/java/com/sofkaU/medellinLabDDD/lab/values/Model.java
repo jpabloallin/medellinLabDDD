@@ -1,4 +1,10 @@
 package com.sofkaU.medellinLabDDD.lab.values;
 
-public class Model {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class Model implements ValueObject<String> {
+    @Override
+    public String value() {
+        return null;
+    }
 }

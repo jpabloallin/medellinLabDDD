@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.staff.values;
 
-public class LabCourierId {
+import co.com.sofka.domain.generic.Identity;
+
+public class LabCourierId extends Identity {
 }

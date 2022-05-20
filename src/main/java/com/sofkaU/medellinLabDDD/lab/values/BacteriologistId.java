@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.lab.values;
 
-public class BacteriologistId {
+import co.com.sofka.domain.generic.Identity;
+
+public class BacteriologistId extends Identity {
 }

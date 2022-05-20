@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.lab.values;
 
-public class BioengineerId {
+import co.com.sofka.domain.generic.Identity;
+
+public class BioengineerId extends Identity {
 }

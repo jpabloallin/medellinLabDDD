@@ -1,4 +1,6 @@
 package com.sofkaU.medellinLabDDD.staff.values;
 
-public class StaffId {
+import co.com.sofka.domain.generic.Identity;
+
+public class StaffId extends Identity {
 }
