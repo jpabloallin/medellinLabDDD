@@ -18,7 +18,7 @@ Clone the repository with the command:
 
 **-staff**
 
-**useCases**
+**-useCases**
 
 *each aggregate folder have the next folders:*
 
