@@ -3,9 +3,6 @@ package com.sofkaU.medellinLabDDD.useCases;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.TriggeredEvent;
-import com.sofkaU.medellinLabDDD.lab.events.DeviceAdded;
-import com.sofkaU.medellinLabDDD.lab.events.LabCreated;
-import com.sofkaU.medellinLabDDD.lab.values.LabType;
 import com.sofkaU.medellinLabDDD.staff.events.CleanerAdded;
 import com.sofkaU.medellinLabDDD.staff.events.StaffCreated;
 import com.sofkaU.medellinLabDDD.staff.values.WorkArea;
@@ -17,8 +14,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class AddCleanerByStaffCreatedUseCaseTest {

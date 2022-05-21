@@ -2,7 +2,6 @@ package com.sofkaU.medellinLabDDD.useCases;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
-import com.sofkaU.medellinLabDDD.lab.events.LabCreated;
 import com.sofkaU.medellinLabDDD.staff.commands.CreateStaff;
 import com.sofkaU.medellinLabDDD.staff.events.StaffCreated;
 import com.sofkaU.medellinLabDDD.staff.values.StaffId;
