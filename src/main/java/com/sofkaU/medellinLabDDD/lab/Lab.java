@@ -69,20 +69,20 @@ public class Lab extends AggregateEvent<LabId> {
     public void updateBioengineerName(BioengineerId entityId, Name name) {
         appendChange(new BioengineerNameUpdated(entityId, name)).apply();
     }
-    public Optional<Device> getDeviceById(DeviceId entityId) {
+    protected Optional<Device> getDeviceById(DeviceId entityId) {
         return devices()
                 .stream()
                 .filter(device -> device.identity().equals(entityId))
                 .findFirst();
     }
 
-    public Optional<Bacteriologist> getBacteriologistById(BacteriologistId entityId) {
+    protected Optional<Bacteriologist> getBacteriologistById(BacteriologistId entityId) {
         return bacteriologists()
                 .stream()
                 .filter(bacteriologist -> bacteriologist.identity().equals(entityId))
                 .findFirst();
     }
-    public Optional<Bioengineer> getBioengineerById(BioengineerId entityId) {
+    protected Optional<Bioengineer> getBioengineerById(BioengineerId entityId) {
         return bioengineers()
                 .stream()
                 .filter(bioengineer -> bioengineer.identity().equals(entityId))
