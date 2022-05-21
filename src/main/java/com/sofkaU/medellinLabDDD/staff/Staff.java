@@ -28,7 +28,7 @@ public class Staff  extends AggregateEvent<StaffId> {
         subscribe(new StaffChange(this));
     }
     /*
-     * This method allows me to build a Staff aggregate object with saved events
+     * This method(Factory) allows me to build a Staff aggregate object with saved events
      */
     public static Staff from(StaffId staffId, List<DomainEvent> events) {
         var staff = new Staff(staffId);

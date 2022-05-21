@@ -26,7 +26,7 @@ public class Lab extends AggregateEvent<LabId> {
     }
 
     /*
-     * This method allows me to build a Lab aggregate object with saved events
+     * This method(Factory) allows me to build a Lab aggregate object with saved events
      */
     public static Lab from(LabId labId, List<DomainEvent> events) {
        var lab = new Lab(labId);
