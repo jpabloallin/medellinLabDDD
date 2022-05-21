@@ -1,7 +1,7 @@
 package com.sofkaU.medellinLabDDD.staff.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkaU.medellinLabDDD.lab.values.Name;
+import com.sofkaU.medellinLabDDD.staff.values.Name;
 import com.sofkaU.medellinLabDDD.staff.values.CleanerId;
 
 public class CleanerNameUpdated extends DomainEvent {

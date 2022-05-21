@@ -1,7 +1,7 @@
 package com.sofkaU.medellinLabDDD.staff;
 
 import co.com.sofka.domain.generic.Entity;
-import com.sofkaU.medellinLabDDD.lab.values.Name;
+import com.sofkaU.medellinLabDDD.staff.values.Name;
 import com.sofkaU.medellinLabDDD.staff.values.RecepcionistId;
 import com.sofkaU.medellinLabDDD.staff.values.YearsOfExperience;
 

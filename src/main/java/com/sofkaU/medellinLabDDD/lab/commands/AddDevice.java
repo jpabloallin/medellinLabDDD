@@ -1,26 +1,29 @@
 package com.sofkaU.medellinLabDDD.lab.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofkaU.medellinLabDDD.lab.values.DeviceId;
-import com.sofkaU.medellinLabDDD.lab.values.DeviceName;
-import com.sofkaU.medellinLabDDD.lab.values.LifeSpan;
-import com.sofkaU.medellinLabDDD.lab.values.Model;
+import com.sofkaU.medellinLabDDD.lab.values.*;
 
 public class AddDevice extends Command {
-    private  final DeviceId entityId;
+    private  final LabId labId;
+    private final DeviceId deviceId;
     private  final DeviceName deviceName;
     private  final Model model;
     private  final LifeSpan lifeSpan;
 
-    public AddDevice(DeviceId entityId, DeviceName deviceName, Model model, LifeSpan lifeSpan) {
-        this.entityId = entityId;
+    public AddDevice(LabId labId, DeviceId deviceId, DeviceName deviceName, Model model, LifeSpan lifeSpan) {
+        this.labId = labId;
+        this.deviceId = deviceId;
         this.deviceName = deviceName;
         this.model = model;
         this.lifeSpan = lifeSpan;
     }
 
-    public DeviceId getEntityId() {
-        return entityId;
+    public LabId getLabId() {
+        return labId;
+    }
+
+    public DeviceId getDeviceId() {
+        return deviceId;
     }
 
     public DeviceName getDeviceName() {
