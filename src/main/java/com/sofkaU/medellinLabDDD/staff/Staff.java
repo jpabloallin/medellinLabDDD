@@ -1,6 +1,8 @@
 package com.sofkaU.medellinLabDDD.staff;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import com.sofkaU.medellinLabDDD.lab.LabChange;
+import com.sofkaU.medellinLabDDD.lab.values.LabId;
 import com.sofkaU.medellinLabDDD.lab.values.Name;
 import com.sofkaU.medellinLabDDD.staff.events.*;
 import com.sofkaU.medellinLabDDD.staff.values.*;
@@ -17,6 +19,10 @@ public class Staff  extends AggregateEvent<StaffId> {
     public Staff(StaffId entityId, WorkArea workArea) {
         super(entityId);
         appendChange(new StaffCreated(workArea)).apply();
+    }
+    private Staff(StaffId entityId){
+        super(entityId);
+        subscribe(new StaffChange(this));
     }
     public void updateWorkArea(WorkArea workArea) {
         appendChange(new WorkAreaUpdated(workArea)).apply();

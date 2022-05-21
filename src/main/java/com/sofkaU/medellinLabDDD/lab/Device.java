@@ -25,7 +25,7 @@ public class Device extends Entity<DeviceId> {
     public void updateModel(Model model) {
         this.model = Objects.requireNonNull(model);
     }
-    public void UpdateLifeSpan(LifeSpan lifeSpan) {
+    public void updateLifeSpan(LifeSpan lifeSpan) {
         this.lifeSpan =Objects.requireNonNull(lifeSpan);
     }
     public DeviceName deviceName() {

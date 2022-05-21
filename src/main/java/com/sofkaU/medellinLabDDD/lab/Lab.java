@@ -17,6 +17,11 @@ public class Lab extends AggregateEvent<LabId> {
         super(entityId);
         appendChange(new LabCreated(labType)).apply();
     }
+    private Lab(LabId entityId){
+        super(entityId);
+        subscribe(new LabChange(this));
+    }
+
     public void updateLabType(LabType labType) {
         appendChange(new LabTypeUpdated(labType)).apply();
     }
