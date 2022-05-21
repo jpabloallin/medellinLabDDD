@@ -1,12 +1,15 @@
 package com.sofkaU.medellinLabDDD.staff;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
+import com.sofkaU.medellinLabDDD.lab.Lab;
 import com.sofkaU.medellinLabDDD.lab.LabChange;
 import com.sofkaU.medellinLabDDD.lab.values.LabId;
 import com.sofkaU.medellinLabDDD.lab.values.Name;
 import com.sofkaU.medellinLabDDD.staff.events.*;
 import com.sofkaU.medellinLabDDD.staff.values.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -23,6 +26,14 @@ public class Staff  extends AggregateEvent<StaffId> {
     private Staff(StaffId entityId){
         super(entityId);
         subscribe(new StaffChange(this));
+    }
+    /*
+     * This method allows me to build a Staff aggregate object with saved events
+     */
+    public static Staff from(StaffId staffId, List<DomainEvent> events) {
+        var staff = new Staff(staffId);
+        events.forEach(staff::applyEvent);
+        return staff;
     }
     public void updateWorkArea(WorkArea workArea) {
         appendChange(new WorkAreaUpdated(workArea)).apply();

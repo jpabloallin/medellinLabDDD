@@ -1,8 +1,11 @@
 package com.sofkaU.medellinLabDDD.lab;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkaU.medellinLabDDD.lab.events.*;
 import com.sofkaU.medellinLabDDD.lab.values.*;
+
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -20,6 +23,15 @@ public class Lab extends AggregateEvent<LabId> {
     private Lab(LabId entityId){
         super(entityId);
         subscribe(new LabChange(this));
+    }
+
+    /*
+     * This method allows me to build a Lab aggregate object with saved events
+     */
+    public static Lab from(LabId labId, List<DomainEvent> events) {
+       var lab = new Lab(labId);
+       events.forEach(lab::applyEvent);
+       return lab;
     }
 
     public void updateLabType(LabType labType) {
